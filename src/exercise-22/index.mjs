@@ -1,8 +1,8 @@
-export default function countDecorations (bigTree) {
-  let sum = bigTree.value
+export default function countDecorations ({ value, left, right }) {
+  let sum = value
 
-  if (bigTree.left !== null) sum += countDecorations(bigTree.left)
-  if (bigTree.right !== null) sum += countDecorations(bigTree.right)
+  if (left !== null) sum += countDecorations(left)
+  if (right !== null) sum += countDecorations(right)
 
   return sum
 }
